@@ -3,20 +3,19 @@
 ## Setup the global environment.
 ROOT=`pwd`
 PATH="/opt/msp430-gcc/bin:$PATH"
-export PATH="$ROOT/tools:$ROOT/build/rivet:$PATH"
+export PATH="$ROOT/tools:$PATH"
 BUILD=build
 
 ## Copy the architecture configurations over to picolibc so it can find
 ## them easily.
-cp -rv ./scripts/picolibc/cross/* picolibc/scripts
+cp -rv ./scripts/cross/* ./picolibc/scripts
 
 ## Set the install and build prefixes. These will apply to every build configuration
 ## below.
-INSTALL_PREFIX=$HOME
+INSTALL_PREFIX=$ROOT/bin
 BUILD=$ROOT/build/picolibc
 
 ## Create all the build directories.
-mkdir -p $BUILD
 mkdir -p $BUILD
 mkdir -p $BUILD/arm6
 mkdir -p $BUILD/arm7
@@ -26,11 +25,11 @@ mkdir -p $BUILD/msp430
 
 # Source the functions for the individual picolibc build configurations.
 # Please add any additional configurations to these files, and call them below.
-source scripts/picolibc/arm6.sh
-source scripts/picolibc/arm7.sh
-source scripts/picolibc/msp430.sh
-source scripts/picolibc/rv32im.sh
-source scripts/picolibc/rv32imfd.sh
+source scripts/arm6.sh
+source scripts/arm7.sh
+source scripts/msp430.sh
+source scripts/rv32im.sh
+source scripts/rv32imfd.sh
 
 # Build each configuration.
 # If you are doing development, you can comment out the ones you don't need.

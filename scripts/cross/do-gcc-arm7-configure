@@ -1,0 +1,5 @@
+#!/bin/bash
+exec "$(dirname "$0")"/do-configure gcc-arm7 \
+     -Dtests=true \
+     -Dtests-enable-stack-protector=false \
+     -Dmultilib=false "$@"
