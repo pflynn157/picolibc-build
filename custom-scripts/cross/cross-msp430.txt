@@ -1,0 +1,24 @@
+[binaries]
+c       = '/opt/msp430-gcc/bin/msp430-elf-gcc'
+ar      = '/opt/msp430-gcc/bin/msp430-elf-ar'
+nm      = '/opt/msp430-gcc/bin/msp430-elf-nm'
+strip   = '/opt/msp430-gcc/bin/msp430-elf-strip'
+objdump = '/opt/msp430-gcc/bin/msp430-elf-objdump'
+ranlib  = '/opt/msp430-gcc/bin/msp430-elf-ranlib'
+
+[host_machine]
+system     = 'none'
+cpu_family = 'msp430'
+cpu        = 'msp430fr5994'
+endian     = 'little'
+
+[built-in options]
+c_args = ['-ffreestanding', '-fno-builtin', '-mlarge', '-mdata-region=upper', '-mmcu=msp430fr5994', '-mcpu=msp430x', '-mhwmult=none'] 
+
+c_link_args = ['-mlarge', '-mdata-region=upper', '-mmcu=msp430fr5994', '-mhwmult=none']
+
+[properties]
+skip_sanity_check = true
+target_c_args = ['-ffreestanding', '-fno-builtin', '-mlarge', '-mdata-region=upper', '-mcpu=msp430x', '-mmcu=msp430fr5994', '-mhwmult=none']
+target_link_args = ['-mlarge', '-mdata-region=upper', '-mmcu=msp430fr5994', '-mhwmult=none']
+  
