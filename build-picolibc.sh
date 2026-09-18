@@ -21,6 +21,7 @@ mkdir -p $BUILD/arm6
 mkdir -p $BUILD/arm7
 mkdir -p $BUILD/rv32im
 mkdir -p $BUILD/rv32imfd
+mkdir -p $BUILD/rv64im
 mkdir -p $BUILD/msp430
 
 # Source the functions for the individual picolibc build configurations.
@@ -30,14 +31,16 @@ source scripts/arm7.sh
 source scripts/msp430.sh
 source scripts/rv32im.sh
 source scripts/rv32imfd.sh
+source scripts/rv64im.sh
 
 # Build each configuration.
 # If you are doing development, you can comment out the ones you don't need.
-build_rv32im
-build_rv32imfd
-build_arm7
-build_arm6
-build_msp430
+#build_rv32im
+#build_rv32imfd
+build_rv64im
+#build_arm7
+#build_arm6
+#build_msp430
 
 ##
 ## All done!
@@ -47,4 +50,3 @@ cd $ROOT
 echo ""
 echo "Done!"
 echo ""
-
