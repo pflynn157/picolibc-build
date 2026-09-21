@@ -23,6 +23,7 @@ mkdir -p $BUILD/rv32im
 mkdir -p $BUILD/rv32imc
 mkdir -p $BUILD/rv32imac
 mkdir -p $BUILD/rv32imfd
+mkdir -p $BUILD/rv32e
 mkdir -p $BUILD/rv64im
 mkdir -p $BUILD/rv64imac
 mkdir -p $BUILD/rv64imfdc
@@ -37,6 +38,7 @@ source scripts/rv32im.sh
 source scripts/rv32imc.sh
 source scripts/rv32imac.sh
 source scripts/rv32imfd.sh
+source scripts/rv32e.sh
 source scripts/rv64im.sh
 source scripts/rv64imac.sh
 source scripts/rv64imfdc.sh
@@ -46,9 +48,10 @@ source scripts/rv64imfdc.sh
 #build_rv32im
 #build_rv32imfd
 #build_rv32imc
-build_rv32imac
+#build_rv32imac
+build_rv32e
 #build_rv64im
-build_rv64imac
+#build_rv64imac
 #build_rv64imfdc
 #build_arm7
 #build_arm6
