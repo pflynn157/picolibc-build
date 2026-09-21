@@ -21,8 +21,10 @@ mkdir -p $BUILD/arm6
 mkdir -p $BUILD/arm7
 mkdir -p $BUILD/rv32im
 mkdir -p $BUILD/rv32imc
+mkdir -p $BUILD/rv32imac
 mkdir -p $BUILD/rv32imfd
 mkdir -p $BUILD/rv64im
+mkdir -p $BUILD/rv64imac
 mkdir -p $BUILD/rv64imfdc
 mkdir -p $BUILD/msp430
 
@@ -33,8 +35,10 @@ source scripts/arm7.sh
 source scripts/msp430.sh
 source scripts/rv32im.sh
 source scripts/rv32imc.sh
+source scripts/rv32imac.sh
 source scripts/rv32imfd.sh
 source scripts/rv64im.sh
+source scripts/rv64imac.sh
 source scripts/rv64imfdc.sh
 
 # Build each configuration.
@@ -42,8 +46,10 @@ source scripts/rv64imfdc.sh
 #build_rv32im
 #build_rv32imfd
 #build_rv32imc
+build_rv32imac
 #build_rv64im
-build_rv64imfdc
+build_rv64imac
+#build_rv64imfdc
 #build_arm7
 #build_arm6
 #build_msp430
